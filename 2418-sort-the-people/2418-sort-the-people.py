@@ -1,12 +1,8 @@
 class Solution(object):
     def sortPeople(self, names, heights):
-        """
-        :type names: List[str]
-        :type heights: List[int]
-        :rtype: List[str]
-        """
+        '''counting sort'''
       
-        name = [""] * len(names)
+        ''' name = [""] * len(names)
         h1 = heights[:]
         
 
@@ -36,7 +32,24 @@ class Solution(object):
         
    
         name.reverse()
-        return name
+        return name '''
+        ''' 
+        pair=sorted(zip(heights,names),reverse=True)
+        sorted_name=[names for _, name in pair]
+        return sorted_names '''
+        
+        
+        ' ' ' selection sort ' ' '
+        
+        for i in range(len(heights)):
+            maxIndex=i
+            for j in range(i+1, len(heights)):
+                if(heights[j]>heights[maxIndex]):
+                    maxIndex=j
+            heights[i],heights[maxIndex]=heights[maxIndex],heights[i]
+            names[i],names[maxIndex]=names[maxIndex],names[i]
+        return names
+                    
 
         
                     
