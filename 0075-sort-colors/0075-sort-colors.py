@@ -10,6 +10,6 @@ class Solution(object):
                  if(nums[j]>nums[j+1]):
                     nums[j],nums[j+1]=nums[j+1],nums[j]
                     swap=True
-            if(swap==False):
+            if swap==False:
                 break
         
