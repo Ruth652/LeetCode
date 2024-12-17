@@ -7,16 +7,18 @@ class Solution(object):
         stack=[]
         path = path.split('/')
         for char in path:
-            if char == "..":
+            if char=="" or char== ".":
+                continue
+            elif char=="..":
                 if stack:
                     stack.pop()
                 else:
                     continue
-            elif char == "" or char == ".":
-                continue
-            else:
+            else :
                 stack.append(char)
+                
+            
         
-        return "/" + ("/").join(stack)
+        return "/"+"/".join(stack)
                 
             
